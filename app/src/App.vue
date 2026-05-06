@@ -5,12 +5,12 @@ const transactions = ref([])
 const error = ref(null)
 
 onMounted(async () => {
-  let { data: transactionData, error: err } = await supabase
-    .from('transactions')
+  let { data: reviewData, error: err } = await supabase
+    .from('reviews')
     .select('*')
   if (err) {
     error.value = err.message
   } else {
-    transactions.value = transactionData
+    reviews.value = reviewData
   }
 })
