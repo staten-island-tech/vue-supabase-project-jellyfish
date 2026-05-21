@@ -1,13 +1,10 @@
 <template>
-  <div>
-    <h2>test</h2>
-  </div>
+ <div>
+  <h1> </h1>
+  <RouterView/>
+ </div>
 </template>
 
-<script setup>
+<script setup></script>
 
-</script>
-
-<style lang="scss" scoped>
-
-</style>
+<style scoped></style>
