@@ -1,6 +1,6 @@
 <template>
   <div>
-<h1> Welcome {{ user.name }}! </h1>
+<h1> Welcome! </h1>
 <button @click="goToMovies(movie)"> Movies </button>
 <button @click="yourReviews(reviews)"> Your Reviews </button>
   <div class="container">
