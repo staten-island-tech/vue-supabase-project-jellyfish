@@ -11,7 +11,10 @@
       <ReviewCard v-for="review in reviews"
       :key="review.name"
       :review="review"/> </div>
-
+  <div class="container">
+      <UserCard v-for="user in users"
+      :key="user.name"
+      :user="user"/></div>
   </div>
 </template>
 
