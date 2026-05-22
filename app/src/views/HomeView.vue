@@ -20,7 +20,7 @@ import {ref} from 'vue'
 import MovieCard from '@/components/MovieCard.vue'
 import ReviewCard from '@/components/ReviewCard.vue'
 
-//api for movies uh i think?
+//api for movies
 
 
 </script>
