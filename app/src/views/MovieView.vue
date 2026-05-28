@@ -11,11 +11,10 @@
  const movie = ref([])
  async function getMovie(){
   try{
-    const response = await fetch(                 )
+    const response = await fetch('https://api.tvmaze.com/shows')
     const data = await response.json()
     movie.value = data.results
-  }
-  catch(error) {
+  } catch(error) {
     console.log(error)
   }
  }
