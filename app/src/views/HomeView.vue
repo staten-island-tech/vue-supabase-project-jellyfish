@@ -1,7 +1,7 @@
 <template>
   <div>
 <h1> Welcome ! </h1>
-<button @click="goToMovies(movie)"> Movies </button>
+<button @click="getMovies(movie)"> Movies </button>
 <button @click="yourReviews(reviews)"> Your Reviews </button>
   <div class="container">
       <MovieCard v-for="movie in movies"

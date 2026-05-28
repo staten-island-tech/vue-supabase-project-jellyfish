@@ -1,30 +1,26 @@
 <template>
-    <div>
-<h2> Movie List </h2>
-    </div>
+  <div>
+    <MovieCard v-for="(movie, index) in movie" :key="movie.name" 
+    :movie="movie" :id="index + 1" />
+  </div>
 </template>
 
 <script setup>
-    import {onBeforeMount, ref, watch} from 'vue'
-    import {useRoute} from 'vue-router'
-    const route = useRoute() 
-    const movie = ref(null)
-    async function getMovie(id){
-        const response = await fetch('https://api.tvmaze.com/shows')
-        const data = response.json()
-        movie.value = data
-    }
-    
-    onBeforeMount(function(){
-        getMovie(route.params.id)
-     })
-     watch(
-        () => route.params.id,
-        function(id) {
-            getMovie(id)
-        }
-     )
-
+ import {ref, onMounted} from 'vue'
+ import MovieCard from '@/components/MovieCard.vue'
+ const movie = ref([])
+ async function getMovie(){
+  try{
+    const response = await fetch('https://api.tvmaze.com/shows')
+    const data = await response.json()
+    movie.value = data.results
+  } catch(error) {
+    console.log(error)
+  }
+ }
+ onMounted(()=> {
+  getMovie()
+ })
 </script>
 
 <style scoped>
