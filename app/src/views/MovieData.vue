@@ -1,7 +1,7 @@
 <template>
   <div>
-    <MovieCard v-for="(movie, index) in movie" :key="movie.name" 
-    :movie="movie" :id="index + 1" />
+    <!-- <MovieCard v-for="(movie, index) in movie" :key="movie.name" 
+    :movie="movie" :id="index + 1" /> -->
   </div>
 </template>
 

@@ -18,7 +18,7 @@ const router = createRouter({
     },
     {
       path: '/movie/:id',
-      name: 'movie data',
+      name: 'movie-data',
       component: MovieData,
     },
   ],
