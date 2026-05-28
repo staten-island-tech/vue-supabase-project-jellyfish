@@ -7,12 +7,15 @@
     </div>
 </template>
 
-<script>
-    export default {
-        
-    }
+<script setup>
+     defineProps({
+        user:{
+        type: Object,
+        required: true
+        },
+    })
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 
 </style>
