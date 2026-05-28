@@ -10,7 +10,7 @@
     const route = useRoute() 
     const movie = ref(null)
     async function getMovie(id){
-        const response = await fetch()
+        const response = await fetch(                   )
         const data = response.json()
         movie.value = data
     }
