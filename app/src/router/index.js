@@ -18,8 +18,8 @@ const router = createRouter({
     },
     {
      path: '/movies',
-    name: 'MovieData',
-     component: () => import('@/views/MovieData.vue')
+     name: 'MovieData',
+     component: MovieData,
       },
     // {
     //   path: '/movie',
