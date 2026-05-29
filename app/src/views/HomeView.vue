@@ -1,7 +1,7 @@
 <template>
   <div>
 <h1> Welcome ! </h1>
-<button @click="getMovies(movie)"> Movies </button>
+<button @click="goToMovieData">Movies</button>
 <button @click="yourReviews(reviews)"> Your Reviews </button>
   <div class="container">
       <MovieCard v-for="movie in movies"
@@ -20,11 +20,16 @@
 
 <script setup>
 import {ref} from 'vue'
+import { useRouter } from 'vue-router'
 import MovieCard from '@/components/MovieCard.vue'
 import ReviewCard from '@/components/ReviewCard.vue'
 import UserCard from '@/components/UserCard.vue'
 
+const router = useRouter()
 
+function goToMovieData() {
+  router.push({ name: 'MovieData' })
+}
 
 
 </script>
