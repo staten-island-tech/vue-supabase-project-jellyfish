@@ -17,15 +17,10 @@ const router = createRouter({
       component: UserCreate,
     },
     {
-     path: '/movies',
-    name: 'MovieData',
-     component: () => import('@/views/MovieData.vue')
-      },
-    // {
-    //   path: '/movie',
-    //   name: 'movie data',
-    //   component: MovieData,
-    // },
+      path: '/movie/:id',
+      name: 'movie data',
+      component: MovieData,
+    },
   ],
 })
 
