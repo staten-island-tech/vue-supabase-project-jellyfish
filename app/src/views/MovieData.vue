@@ -9,7 +9,7 @@
  import {ref, onMounted} from 'vue'
  import MovieCard from '@/components/MovieCard.vue'
  const movie = ref([])
-/*  async function getMovie(){
+ async function getMovie(){
   try{
     const response = await fetch('https://api.tvmaze.com/shows')
     const data = await response.json()
@@ -20,9 +20,9 @@
  }
  onMounted(()=> {
   getMovie()
- }) */
+ })
 
-async function fetchApiData() {
+/* async function fetchApiData() {
   const apiUrl = 'https://api.tvmaze.com/shows';
 
   try {
@@ -44,7 +44,7 @@ async function fetchApiData() {
   }
 }
 
-fetchApiData();
+fetchApiData(); */
 
 </script>
 
