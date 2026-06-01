@@ -1,53 +1,47 @@
 <template>
   <div>
-    <!-- <MovieCard v-for="(movie, index) in movie" :key="movie.name" 
-    :movie="movie" :id="index + 1" /> -->
+    <div class="movie-grid">
+      <MovieCard
+        v-for="movie in movies"
+        :key="movie.id || movie.name"
+        :movie="movie"
+      />
+    </div>
   </div>
 </template>
 
 <script setup>
- import {ref, onMounted} from 'vue'
- import MovieCard from '@/components/MovieCard.vue'
- const movie = ref([])
-/*  async function getMovie(){
-  try{
-    const response = await fetch('https://api.tvmaze.com/shows')
-    const data = await response.json()
-    movie.value = data.results
-  } catch(error) {
-    console.log(error)
-  }
- }
- onMounted(()=> {
-  getMovie()
- }) */
+import { ref, onMounted } from 'vue'
+import MovieCard from '@/components/MovieCard.vue'
+
+const movies = ref([])
 
 async function fetchApiData() {
-  const apiUrl = 'https://api.tvmaze.com/shows';
+  const apiUrl = 'https://api.tvmaze.com/shows'
 
   try {
-    
-    const response = await fetch(apiUrl);
+    const response = await fetch(apiUrl)
 
     if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
+      throw new Error(`HTTP error! status: ${response.status}`)
     }
-    
-    const data = await response.json();
 
-    console.log(data);
-    return data;
-
+    const data = await response.json()
+    movies.value = data
   } catch (error) {
-    
-    console.error('Error fetching data:', error);
+    console.error('Error fetching data:', error)
   }
 }
 
-fetchApiData();
-
+onMounted(() => {
+  fetchApiData()
+})
 </script>
 
 <style scoped>
-
+.movie-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
 </style>
