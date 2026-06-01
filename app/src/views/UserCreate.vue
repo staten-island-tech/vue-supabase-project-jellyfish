@@ -21,9 +21,6 @@
     const loggedIn = ref(false)
     function login(user) {
         loggedIn.value = true
-        const router = useRouter()
-        const goToMovieData = () => router.push('/movies')
-        return { goToMovieData }
     }
 </script>
 
