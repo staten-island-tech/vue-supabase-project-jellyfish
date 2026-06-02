@@ -7,7 +7,7 @@
 
 <script setup>
  import {ref, onMounted} from 'vue'
- import ShowCard from '@/components/MovieCard.vue'
+ import ShowCard from '@/components/ShowCard.vue'
 
 
   fetchApiData();
