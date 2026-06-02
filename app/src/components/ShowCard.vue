@@ -1,15 +1,15 @@
 <template>
 <router-link :to='Path' class="card"><div class="container"></div>
-<h2> {{ movie.name }} </h2>
-<h3> {{ movie.rating }} </h3>
-<h3> {{ movie.summary }} </h3>
-<button @click="reviewMovie(movie)"> Add a Review </button>
+<h2> {{ show.name }} </h2>
+<h3> {{ show.rating }} </h3>
+<h3> {{ show.summary }} </h3>
+<button @click="reviewShow(show)"> Add a Review </button>
 </router-link>
 </template>
 
 <script setup>
     defineProps({
-        movie:{
+        show:{
         type: Object,
         required: true
         },

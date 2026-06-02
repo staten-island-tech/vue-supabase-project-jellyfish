@@ -1,12 +1,12 @@
 <template>
   <div>
 <h1> Welcome ! </h1>
-<button @click="goToMovieData">Movies</button>
+<button @click="goToShowData">Shows</button>
 <button @click="yourReviews(reviews)"> Your Reviews </button>
   <div class="container">
-      <MovieCard v-for="movie in movies"
-      :key="movie.name"
-      :movie="movie"/></div>
+      <ShowCard v-for="show in shows"
+      :key="show.name"
+      :show="show"/></div>
   <div class="container">
       <ReviewCard v-for="review in reviews"
       :key="review.name"
@@ -21,14 +21,14 @@
 <script setup>
 import {ref} from 'vue'
 import { useRouter } from 'vue-router'
-import MovieCard from '@/components/MovieCard.vue'
+import ShowCard from '@/components/ShowCard.vue'
 import ReviewCard from '@/components/ReviewCard.vue'
 import UserCard from '@/components/UserCard.vue'
 
 const router = useRouter()
 
-function goToMovieData() {
-  router.push({ name: 'MovieData' })
+function goToShowData() {
+  router.push({ name: 'ShowData' })
 }
 
 
