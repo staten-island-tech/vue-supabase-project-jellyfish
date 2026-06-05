@@ -9,7 +9,7 @@
             <button type="submit"> Login </button>
         </form>
         <div>
-            <h2 v-if="loggedIn">Welcome {{ user.name }}</h2>
+            <h2 v-if="loggedIn">Welcome {{ user.name }} </h2>
             <h2 v-else>Login</h2>
         </div>
     </div>
@@ -17,13 +17,14 @@
 
 <script setup>
     import { reactive, ref} from 'vue';
+    
     const user = reactive({'username': '', 'password':''})
     const loggedIn = ref(false)
     function login(user) {
         loggedIn.value = true
         const router = useRouter()
-        const goToShowData = () => router.push('/shows')
-        return { goToShowData }
+        const goToHome = () => router.push('/home')
+        return { goToHome }
     }
 </script>
 
