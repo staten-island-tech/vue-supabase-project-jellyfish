@@ -22,11 +22,11 @@ const router = createRouter({
      name: 'shows',
      component: ShowData,
     },
-     {
+     /* {
      path: '/reviews',
      name: 'reviews',
      component: WriteReview,
-    },
+    }, */
   ],
 })
 
