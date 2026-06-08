@@ -18,15 +18,15 @@ const router = createRouter({
       component: UserCreate,
     },
     {
-     path: '/shows',
+     path: '/shows/:id',
      name: 'shows',
      component: ShowData,
     },
-     /* {
+     {
      path: '/reviews',
      name: 'reviews',
      component: WriteReview,
-    }, */
+    },
   ],
 })
 
