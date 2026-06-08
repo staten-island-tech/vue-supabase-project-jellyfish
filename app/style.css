@@ -1,0 +1,23 @@
+:root {
+  --white: #ffffff;
+  --grey: #3a3a3a;
+  --primary: var(--white);
+  --secondary: var(--grey);
+}
+
+.light {
+  --primary: var(--white);
+}
+
+.dark {
+  --primary: var(--grey);
+}
+
+.font {
+  background-color: var(--primary);
+}
+
+.main {
+  background-color: var(--secondary);
+  height: 90vh;
+}
