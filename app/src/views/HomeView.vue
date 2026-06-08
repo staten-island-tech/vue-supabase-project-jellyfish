@@ -31,6 +31,9 @@ function goToShowData() {
   router.push({ name: 'ShowData' })
 }
 
+function yourReviews() {
+  router.push({ name: 'WriteReview' })
+}
 
 </script>
 
