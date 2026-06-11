@@ -5,7 +5,10 @@
       <button> Add Review </button>
     </form>
   
+    <!-- REMEMBER TO REMOVE LIST -->
+
     <li v-for="review in reviews" :key="review.id">
+      {{ review.text }}
       <button @click="removeReview(review)"> Delete </button>
     </li>
 
@@ -17,7 +20,6 @@
   import { ref } from 'vue'
   
   let id = 0
-
 
   const newReview = ref('')
   const reviews = ref([
