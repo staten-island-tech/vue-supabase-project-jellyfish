@@ -19,21 +19,14 @@
 </template>
 
 <script setup>
-import {ref} from 'vue'
+import {ref, onMounted} from 'vue'
 import { useRouter } from 'vue-router'
 import ShowCard from '@/components/ShowCard.vue'
 import ReviewCard from '@/components/ReviewCard.vue'
 import UserCard from '@/components/UserCard.vue'
 
-const router = useRouter()
 
-function goToShowData() {
-  router.push({ name: 'ShowData' })
-}
 
-function yourReviews() {
-  router.push({ name: 'WriteReview' })
-}
 
 </script>
 
