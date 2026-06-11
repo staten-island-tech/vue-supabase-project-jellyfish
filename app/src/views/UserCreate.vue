@@ -17,14 +17,14 @@
 
 <script setup>
     import { reactive, ref} from 'vue';
+    import { useRouter } from 'vue-router'
     
+    const router = useRouter()
     const user = reactive({'username': '', 'password':''})
     const loggedIn = ref(false)
     function login(user) {
         loggedIn.value = true
-        const router = useRouter()
-        const goToHome = () => router.push('/home')
-        return { goToHome }
+        router.push('/home')
     }
 </script>
 
