@@ -26,7 +26,6 @@ import UserCard from '@/components/UserCard.vue'
 
 
 
-
 </script>
 
 <style lang="scss" scoped>

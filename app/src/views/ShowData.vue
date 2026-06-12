@@ -78,18 +78,5 @@ watch(
 </script>
 
 <style scoped>
-h1 {
-  text-align: center;
-  margin-bottom: 40px;
-}
 
-.card { 
-  align-items: center;
-  border: 2px solid #000000;
-  padding: 10px;
-  margin-bottom: 20px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
 </style>
