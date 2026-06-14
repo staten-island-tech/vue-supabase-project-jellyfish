@@ -1,31 +1,44 @@
 <template>
-    <div>
-        <h1>Login Page</h1>
-        <form action="submit" @submit.prevent="login(user)">
-            <label for="username"> Username </label>
-            <input v-model="username" required placeholder="username">
-            <label for="password"> Password </label>
-            <input v-model="password" required placeholder="password">
-            <button type="submit"> Login </button>
+    <div class="auth">
+        <h1>Login</h1>
+        
+        <form @submit.prevent="login">
+            <input v-model="email" type="email" placeholder="email" required />
+            <input v-model="password" placeholder="password" required />
+            <button type="submit">Login</button>
         </form>
-        <div>
-            <h2 v-if="loggedIn">Welcome {{ user.name }} </h2>
-            
-        </div>
+        
+        <p v-if="error" class="error">{{ error }}</p>
+ 
     </div>
 </template>
 
 <script setup>
-    import { reactive, ref} from 'vue';
+    import { ref } from 'vue';
     import { useRouter } from 'vue-router'
+    import { supabase } from '@/Supabase'
     
     const router = useRouter()
-    const user = reactive({'username': '', 'password':''})
-    const loggedIn = ref(false)
-    function login(user) {
-        loggedIn.value = true
+    const email = ref('')
+    const password = ref('')
+    
+    async function login(){
+        error.value = null
+
+        const { data, error: err } = await supabase.auth.signInWithPassword({
+            email: email.value,
+            password: password.value
+        })
+
+        if (err) {
+            error.value = err.message
+            return
+        }
+
         router.push('/shows')
     }
+
+
 </script>
 
 <style scoped>
