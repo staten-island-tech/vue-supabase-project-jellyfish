@@ -1,9 +1,17 @@
 <template>
+
   <div v-if="show">
-    <h1>{{ show.name }}</h1>
-    <p><strong>Rating: </strong> {{ show.rating.average }}</p>
-    <img v-if="show.image" :src="show.image.medium" />
-    <div v-html="show.summary"></div>
+    <h1 class="title">{{ show.name }}</h1>
+    
+    <div class="info">
+      <img v-if="show.image" :src="show.image.medium" />
+      
+      <div class="details">
+        <p>Rating: {{ show.rating.average }}</p>
+        <div v-html="show.summary"></div>
+      </div>
+    
+    </div>
   </div>
 
   <!-- WriteReview -->
@@ -20,7 +28,7 @@
     </li>
 
 
-    </div>
+  </div>
 
 </template>
 
@@ -78,5 +86,27 @@ watch(
 </script>
 
 <style scoped>
+.info {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  font-size: 20px;
+}
+
+.info img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.details {
+  flex: 1;
+}
+
+.title {
+  margin-bottom: 15px;
+}
+
 
 </style>

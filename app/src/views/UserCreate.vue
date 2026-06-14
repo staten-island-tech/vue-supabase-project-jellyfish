@@ -4,9 +4,7 @@
         <form action="submit" @submit.prevent="login(user)">
             <label for="username"> Username </label>
             <input v-model="username" required placeholder="username">
-            <!-- <input type="text" v-model="user.name"> -->
             <label for="password"> Password </label>
-            <!-- <input type="password" v-model="user.password"/> -->
             <input v-model="password" required placeholder="password">
             <button type="submit"> Login </button>
         </form>
@@ -26,7 +24,7 @@
     const loggedIn = ref(false)
     function login(user) {
         loggedIn.value = true
-        router.push('/shows/:id')
+        router.push('/shows')
     }
 </script>
 
