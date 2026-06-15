@@ -1,6 +1,8 @@
 <template>
-
+  <button @click="goHome">Home</button>
+  
   <div v-if="show">
+    
     <h1 class="title">{{ show.name }}</h1>
     
     <div class="info">
@@ -34,9 +36,15 @@
 
 <script setup>
 import { ref, onBeforeMount, watch } from 'vue'
-import { useRoute } from 'vue-router'
+import { useRoute, useRouter } from 'vue-router'
+const route = useRoute()
+const router = useRouter()
 
-const route = useRoute() 
+function goHome() {
+  router.push('/shows')
+}
+
+
 const show = ref(null)
 
 async function getShow(id) {
