@@ -26,7 +26,7 @@
 
     <li v-for="review in reviews" :key="review.id">
       {{ review.text }}
-      <button @click="removeReview(review)"> Delete </button>
+      <button @click="removeReview(review)"> x </button>
     </li>
 
 
