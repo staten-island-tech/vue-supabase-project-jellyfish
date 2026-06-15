@@ -1,6 +1,8 @@
 <template>
+    
     <div class="auth">
-        
+        <h1>Welcome!</h1>
+        <h2>Please login or sign up first to start reviewing! 𓁹‿𓁹 </h2>
         <input v-model="email" type="email" placeholder="email" required />
         <input v-model="password" type="password" placeholder="password" required />
         <button v-if="submit">Login</button> 
